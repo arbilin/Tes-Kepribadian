@@ -1,0 +1,89 @@
+body,
+html {
+		margin:0;
+		padding:0;
+		color:#000;
+		background:dimgray;
+		font:14px Verdana, Arial, Helvetica, sans-serif;
+	}
+
+#box{
+	width:500px;
+	height:300px;
+	border: white 10px dashed;
+	background-color:dimgray;
+	padding: 40px 40px;
+	margin-top:60px;
+	color:white;
+	border-radius:30px;
+}
+
+#box2{
+	width:700px;
+	border: white 10px dashed;
+	background-color:dimgray;
+	padding: 40px 40px;
+	margin-top:60px;
+	color:white;
+	border-radius:30px;
+}
+
+#tombol_mulai{
+	background: lightgrey;
+	font-size: 34px;
+	color: white;
+	background-color:dimgray;
+	
+}
+
+#tombol_mulai:hover{
+	background: white;
+	color: dimgray;
+}
+
+#tombol_balik{
+	background: lightgrey;
+	border: solid lightgrey;
+	color: dimgray;
+	text-align: center;
+}
+
+#tombol_balik:hover{
+	background: white;
+	border: solid white;
+	color: dimgray;
+}
+
+#Koleris{
+	background-color: firebrick;
+}
+
+#Sanguinis{
+	background-color: khaki;
+	color: black;
+}
+
+#Plegmatis{
+	background-color: limegreen;
+	color: black;
+}
+
+#Melankolis{
+	background-color: paleturquoise;
+	color: black;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+a#link{
+	text-decoration: underline;
+	color: yellow;
+}
+
+table,tr,td{
+	/*border: white 1px solid;
+	padding-top: 5px;*/
+}
