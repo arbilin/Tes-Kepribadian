@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Inang: 127.0.0.1
--- Waktu pembuatan: 06 Mei 2016 pada 02.25
+-- Waktu pembuatan: 06 Mei 2016 pada 03.29
 -- Versi Server: 5.5.27
 -- Versi PHP: 5.4.7
 
@@ -151,7 +151,7 @@ INSERT INTO `quotes` (`id`, `quote`) VALUES
 (9, '"Proyek MSP Pimp-up Your Skill! saya :)"'),
 (10, '"Di deploy pake Microsoft Azure lho!"'),
 (11, '"Lakukan dengan jujur kalau mau hasil yang jujur"'),
-(12, '"Lihat kodenya di repository <a href='''' id=''link''>github saya</a>"');
+(12, '"Lihat kodenya di repository <a href=''https://github.com/arbilin/Tes-Kepribadian.git'' id=''link''>github saya</a>"');
 
 -- --------------------------------------------------------
 
