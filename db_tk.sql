@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 3.5.5
 -- http://www.phpmyadmin.net
 --
--- Inang: 127.0.0.1
--- Waktu pembuatan: 06 Mei 2016 pada 03.29
--- Versi Server: 5.5.27
--- Versi PHP: 5.4.7
+-- Inang: br-cdbr-azure-south-b.cloudapp.net
+-- Waktu pembuatan: 06 Mei 2016 pada 03.17
+-- Versi Server: 5.5.45-log
+-- Versi PHP: 5.3.28
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
