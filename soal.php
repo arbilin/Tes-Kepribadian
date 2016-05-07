@@ -23,75 +23,54 @@ header('location:larangan.php');
 				<?php
 				include "config.php";
 				   
-				function bedakan($q1,$q2){
-					while($q1==$q2){
-						$q1=rand(1,8);
+				$jenis = array('koleris','koleris','sanguinis','sanguinis','plegmatis','plegmatis','melankolis','melankolis');
+				$nomor = array(1,2,3,4,5,6,7,8);
+
+				$n=count($jenis);
+				shuffle($jenis);
+				shuffle($nomor);
+				$ikol=1; $isang=1; $ipleg=1; $imel=1;
+				for($i=0; $i<$n; $i++){
+					$query="SELECT * FROM ".$jenis[$i]." WHERE id='".$nomor[$i]."'";
+					$hasil=mysql_query($query);
+					while ($data=mysql_fetch_row($hasil)) {
+						if($jenis[$i]=='koleris'){
+							echo "<tr bgcolor='gray'><td>$data[1]</td>";
+							echo "<td width='30%'>
+								  <label><input type='radio' name='kol$ikol' value='Sangat pas'> Sangat Pas</label><br>
+								  <label><input type='radio' name='kol$ikol' value='Pas'> Pas</label><br>
+								  <label><input type='radio' name='kol$ikol' value='Kurang pas'> Kurang pas</label><br>
+								  <label><input type='radio' name='kol$ikol' value='Tidak pas'> Tidak pas</label></td></tr>";
+							$ikol++;
+						}
+						else if($jenis[$i]=='sanguinis'){
+							echo "<tr bgcolor='gray'><td>$data[1]</td>";
+							echo "<td width='30%'>
+								  <label><input type='radio' name='sang$isang' value='Sangat pas'> Sangat Pas</label><br>
+								  <label><input type='radio' name='sang$isang' value='Pas'> Pas</label><br>
+								  <label><input type='radio' name='sang$isang' value='Kurang pas'> Kurang pas</label><br>
+								  <label><input type='radio' name='sang$isang' value='Tidak pas'> Tidak pas</label></td></tr>";
+							$isang++;
+						}
+						else if($jenis[$i]=='plegmatis'){
+							echo "<tr bgcolor='gray'><td>$data[1]</td>";
+							echo "<td width='30%'>
+								  <label><input type='radio' name='pleg$ipleg' value='Sangat pas'> Sangat Pas</label><br>
+								  <label><input type='radio' name='pleg$ipleg' value='Pas'> Pas</label><br>
+								  <label><input type='radio' name='pleg$ipleg' value='Kurang pas'> Kurang pas</label><br>
+								  <label><input type='radio' name='pleg$ipleg' value='Tidak pas'> Tidak pas</label></td></tr>";
+							$ipleg++;
+						}
+						else if($jenis[$i]=='melankolis'){
+							echo "<tr bgcolor='gray'><td>$data[1]</td>";
+							echo "<td width='30%'>
+								  <label><input type='radio' name='mel$imel' value='Sangat pas'> Sangat Pas</label><br>
+								  <label><input type='radio' name='mel$imel' value='Pas'> Pas</label><br>
+								  <label><input type='radio' name='mel$imel' value='Kurang pas'> Kurang pas</label><br>
+								  <label><input type='radio' name='mel$imel' value='Tidak pas'> Tidak pas</label></td></tr>";
+							$imel++;
+						}
 					}
-					return $q1;
-				}
-
-				$q1=rand(1,8);
-				$q2=rand(1,8);
-				if($q1==$q2) $q1=bedakan($q1,$q2);
-				$query1="SELECT * FROM koleris WHERE id='$q1' OR id='$q2'";
-				$hasil=mysql_query($query1);
-				$i=1;
-				while ($data=mysql_fetch_row($hasil)) {
-					echo "<tr bgcolor='gray'><td>$data[1]</td>";
-					echo "<td width='30%'>
-						  <label><input type='radio' name='kol$i' value='Sangat pas'> Sangat Pas</label><br>
-						  <label><input type='radio' name='kol$i' value='Pas'> Pas</label><br>
-						  <label><input type='radio' name='kol$i' value='Kurang pas'> Kurang pas</label><br>
-						  <label><input type='radio' name='kol$i' value='Tidak pas'> Tidak pas</label></td></tr>";
-					$i++;
-				}
-
-				$q1=rand(1,8);
-				$q2=rand(1,8);
-				if($q1==$q2) $q1=bedakan($q1,$q2);
-				$query1="SELECT * FROM sanguinis WHERE id='$q1' OR id='$q2'";
-				$hasil=mysql_query($query1);
-				$i=1;
-				while ($data=mysql_fetch_row($hasil)) {
-					echo "<tr bgcolor='gray'><td>$data[1]</td>";
-					echo "<td width='30%'>
-						  <label><input type='radio' name='sang$i' value='Sangat pas'> Sangat Pas</label><br>
-						  <label><input type='radio' name='sang$i' value='Pas'> Pas</label><br>
-						  <label><input type='radio' name='sang$i' value='Kurang pas'> Kurang pas</label><br>
-						  <label><input type='radio' name='sang$i' value='Tidak pas'> Tidak pas</label></td></tr>";
-					$i++;
-				}
-
-				$q1=rand(1,8);
-				$q2=rand(1,8);
-				if($q1==$q2) $q1=bedakan($q1,$q2);
-				$query1="SELECT * FROM plegmatis WHERE id='$q1' OR id='$q2'";
-				$hasil=mysql_query($query1);
-				$i=1;
-				while ($data=mysql_fetch_row($hasil)) {
-					echo "<tr bgcolor='gray'><td>$data[1]</td>";
-					echo "<td width='30%'>
-						  <label><input type='radio' name='pleg$i' value='Sangat pas'> Sangat Pas</label><br>
-						  <label><input type='radio' name='pleg$i' value='Pas'> Pas</label><br>
-						  <label><input type='radio' name='pleg$i' value='Kurang pas'> Kurang pas</label><br>
-						  <label><input type='radio' name='pleg$i' value='Tidak pas'> Tidak pas</label></td></tr>";
-					$i++;
-				}
-
-				$q1=rand(1,8);
-				$q2=rand(1,8);
-				if($q1==$q2) $q1=bedakan($q1,$q2);
-				$query1="SELECT * FROM melankolis WHERE id='$q1' OR id='$q2'";
-				$hasil=mysql_query($query1);
-				$i=1;
-				while ($data=mysql_fetch_row($hasil)) {
-					echo "<tr bgcolor='gray'><td>$data[1]</td>";
-					echo "<td width='30%'>
-						  <label><input type='radio' name='mel$i' value='Sangat pas'> Sangat Pas</label><br>
-						  <label><input type='radio' name='mel$i' value='Pas'> Pas</label><br>
-						  <label><input type='radio' name='mel$i' value='Kurang pas'> Kurang pas</label><br>
-						  <label><input type='radio' name='mel$i' value='Tidak pas'> Tidak pas</label></td></tr>";
-					$i++;
 				}
 
 				?>
